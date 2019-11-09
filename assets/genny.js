@@ -35,3 +35,4 @@ function handleChange(btnUppercase) {
       document.getElementById("submit").setAttribute("disabled", "disabled");
   }
 }
+
