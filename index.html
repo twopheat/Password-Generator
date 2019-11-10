@@ -12,21 +12,25 @@
   </head>
   <body>
     <h1 class="text-center">Password Generator</h1>
-    <div class="container text-center shadow-sm round-sm">
+    <div class="container text-center shadow-sm round-sm p-3">
         <div class="row">
-          <h4>Generate a Password</h4>
+          <h4 class="m-3">Generate a Password</h4>
             <br>
-          <div id="returnP" class="col-lg-10 text-center border-2-gray rounded-lg shadow-sm">
-                <span id="results"></span>
+          <div id="returnP" class="p-3 offset-sm-2 col-sm-8 text-center border-2-gray rounded-lg shadow-sm">
+                <span type="text" class="col-sm-3 text-break" id="results"></span>
                 <br>
           </div>
-          <form id="pGenForm">
-                <p>Enter 8-128 <input type="number" min="8" max="128" id="pLength">
-                <input type="checkbox" name="sChar" value="Special Characters">Special Characters
-                <button class="col-md-offset-1 col-sm-3 btn-primary rounded-lg" id="generate" name="generate" onclick="makePass()">Generate Password</button></p>
-                
+        </div>
+          <br>
+          <br>
+        <div id="inputs">
+          <form class="row" id="pGenForm">
+                <p class="col-sm-3">Enter 8-128 <input type="number" min="8" max="128" id="pLength"></p>
+                <p class="col-sm-2"><input type="checkbox" name="sChar" value="Special Characters"> Special Characters</p>
+                <submit class="button col-md-offset-1 col-sm-3 btn-primary rounded-lg" id="generate" >Generate Password</submit>
+                <button class="col-md-offset-1 col-sm-2 btn-warning rounded-lg" id="clipboard" name="clipboard" >Copy</button>
               </form>
-              <button class="col-md-offset-1 col-sm-3 btn-warning rounded-lg" id="clipboard" name="clipboard">Copy</button>
+              
         </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS, per GetBootStrap -->
