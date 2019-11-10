@@ -1,6 +1,7 @@
 // Declaring some global variables
 var generateEl = document.querySelector("#generate");
-var clipboardEl = document.querySelector("#clipboard");
+var copyEl = document.querySelector("#Copy");
+var specialChar = document.querySelector("#sChar")
 var keylist="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 var keyspecial="'(!)*+,-./:;<=>?@[]^_`{|}~";
 
@@ -18,6 +19,7 @@ function makePass(){
             pass += keylist.charAt(Math.floor(Math.random() * keylist.length));
         }
         Results.innerHTML=pass;
+        
     }
     
 
@@ -30,22 +32,18 @@ function makePass(){
         };
     }
     }
+    
 //below two functions are supposed to copy to clipboard, no dice there
 function Copy() {
     var copyText = document.getElementById("results");
-    copyText.selectText();
-    copyText.setSelectionRange(0, 99999)
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
     alert("Copied");
   }
 
-  function selectText() {
-  const input = document.getElementById('results');
-  input.focus();
-  input.select();
-}
 // EventListeners for button click events
 
-//clipboardEl.addEventListener("click", Copy.bind(this));  <--DOES NOT WORK
+copyEl.addEventListener("click", Copy.bind(this));  
 
 generateEl.addEventListener("click", makePass.bind(this));
