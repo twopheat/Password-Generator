@@ -1,26 +1,39 @@
-// Declaring my variables
-var specialEL = document.querySelector("#special")
+// Declaring some global variables
 var generateEl = document.querySelector("#generate");
 var clipboardEl = document.querySelector("#clipboard");
-var returnEl = document.querySelector("#returnP");
+var keylist="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+var keyspecial="'(!)*+,-./:;<=>?@[]^_`{|}~";
 
-var keylist="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-var keylistSpecial="!@#$%^&*()_+-=[]{};':<>,.~`"
+// Function to create random password
+function makePass(){
+    var UserInput=pLength.value.replace(passArray(), "");
+    //Update input value
+    pLength.value=UserInput;
+    //Declare local variables for makePass
+    var Results=document.getElementById('results');
+    var pass = "";
+    var keylist = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    //Is input is empty?
+    if(pLength!==''){
+        for( var i=0; i < pLength.value; i++ ){
+            pass += keylist.charAt(Math.floor(Math.random() * keylist.length));
+        }
+        Results.innerHTML=pass;
+    }
 
-// EventListeners built for button click events
-// Function to create simple random password, yes, I found this out in the internet, but I studied it heavily and modified it for my needs, didn't blindly paste it in
+    function passArray() {
+        var foo = [];
 
-function returnPtext() {
-    returnEl.textContent = returnP;
-}
+        for (var i = 8; i <= 128; i++) {
+            foo.push(i);
+        };
+    }
+    }
 
-generateEl.addEventListener("click", function generateP() {
-    return Math.random().toString(36).slice(2).keylistSpecial;
-});
 
-console.log(generateEl);
 
-//clipboardEl.addEventListener("click", function() {
-    
-//})
+// EventListeners for button click events
 
+//clipboardEl.addEventListener("click", function copy(){});
+
+generateEl.addEventListener("click", function makePass(){});

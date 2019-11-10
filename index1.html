@@ -12,14 +12,18 @@
   </head>
   <body>
     <h1 class="text-center">Password Generator</h1>
-    <div class="container">
-            <p id="genindex"></p>
-        <div class="col-md-offset-1 col-lg-10 text-center">
-              <form class="form-group" name="pgenerate">
-                <input class="round-sm" type="text" size=28 name="output">
-                  <input type="button" value="Generate Password" onClick="populateform(this.form.thelength.value)"><br />
-                  <b>Password Length:</b> <input type="text" name="thelength" min="8" size=2 value=""><b>8 Minimum</b> <br />
-                  <button type="button" id="btnSpecial" class="m-3 btn btn-warning" onchange='handleChange(this);' data-toggle="button" aria-pressed="false" autocomplete="off">Special Characters</button><button type="button" id="btnUppercase" class="m-3 btn btn-warning" onchange='handleChange1(this);' data-toggle="button" aria-pressed="false" autocomplete="off">Uppercase</button>
+    <div class="container text-center shadow-sm round-sm">
+        <div class="row">
+          <h4>Generate a Password</h4>
+            <br>
+          <div id="returnP" class="col-lg-10 text-center border-2-gray round-lg shadow-sm">
+                <span id="results"></span>
+                <br>
+          </div>
+          <form id="pGenForm">
+                <p>Enter 8-128 <input type="number" min="8" max="128" id="pLength" onkeyup="makePass()">
+                <button class="col-md-offset-1 col-sm-3 bg-orange round-sm" id="generate" name="generate">Generate Password</button>
+                <button class="col-md-offset-1 col-sm-3 bg-gray round-sm" id="clipboard" name="clipboard">Copy to Clipboard</button></p>
               </form>
         </div>
     </div>
@@ -27,7 +31,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/genny.js"></script>
+    <script src="assets/gen.js"></script>
     
   </body>
 </html>
