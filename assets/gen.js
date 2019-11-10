@@ -12,7 +12,6 @@ function makePass(){
     //Declare local variables for makePass
     var Results=document.getElementById('results');
     var pass = "";
-    var keylist = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     //Is input is empty?
     if(pLength!==''){
         for( var i=0; i < pLength.value; i++ ){
@@ -20,12 +19,19 @@ function makePass(){
         }
         Results.innerHTML=pass;
     }
+    else if(self.is(":checked")){
+        for( var i=0; i < pLength.value; i++ ){
+            pass += keylistspecial.charAt(Math.floor(Math.random() * keylistspecial.length));
+        }
+        Results.innerHTML=pass;
+    }
 
     function passArray() {
         var foo = [];
 
-        for (var i = 8; i <= 128; i++) {
+        for (var i = 0; i <= 128; i++) {
             foo.push(i);
+            
         };
     }
     }
@@ -36,4 +42,4 @@ function makePass(){
 
 //clipboardEl.addEventListener("click", function copy(){});
 
-generateEl.addEventListener("click", function makePass(){});
+generateEl.addEventListener("click", makePass.bind(this));

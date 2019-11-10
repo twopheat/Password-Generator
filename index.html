@@ -16,15 +16,17 @@
         <div class="row">
           <h4>Generate a Password</h4>
             <br>
-          <div id="returnP" class="col-lg-10 text-center border-2-gray round-lg shadow-sm">
+          <div id="returnP" class="col-lg-10 text-center border-2-gray rounded-lg shadow-sm">
                 <span id="results"></span>
                 <br>
           </div>
           <form id="pGenForm">
-                <p>Enter 8-128 <input type="number" min="8" max="128" id="pLength" onkeyup="makePass()">
-                <button class="col-md-offset-1 col-sm-3 bg-orange round-sm" id="generate" name="generate">Generate Password</button>
-                <button class="col-md-offset-1 col-sm-3 bg-gray round-sm" id="clipboard" name="clipboard">Copy to Clipboard</button></p>
+                <p>Enter 8-128 <input type="number" min="8" max="128" id="pLength">
+                <input type="checkbox" name="sChar" value="Special Characters">Special Characters
+                <button class="col-md-offset-1 col-sm-3 btn-primary rounded-lg" id="generate" name="generate" onclick="makePass()">Generate Password</button></p>
+                
               </form>
+              <button class="col-md-offset-1 col-sm-3 btn-warning rounded-lg" id="clipboard" name="clipboard">Copy</button>
         </div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS, per GetBootStrap -->
